@@ -9,16 +9,19 @@ Planned PyreHaven creature set:
 - Moo-cows
 - Zom-bees
 
-## Test release 0.1.0-test.1
+## Test release 0.1.0-test.2
 
-This first test build adds a summonable reindeer entity with:
+This second test build refreshes the summonable reindeer with:
 
-- server-side entity registration and basic animal AI
-- a client-side renderer
-- a custom blocky model with antlers
-- a generated vanilla-style texture
-- code-driven walking/head animation
-- a reindeer spawn egg item
+- a Blockbench-authored source model under `blockbench/reindeer_v2.bbmodel`
+- refined blocky geometry with fuller body mass, shoulder/chest fluff, a forehead tuft, red nose, expanded antlers, and darker hooves
+- a remade 128×128 texture with warmer fur shading, tan muzzle/cheek detail, lighter antlers, and stronger hoof contrast
+- improved Java model animation with subtle idle bob, antler sway, ear flicks, tail wag, body bob, and a slightly livelier walking prance
+- the existing server-side entity registration, basic animal AI, client renderer, and reindeer spawn egg item
+
+## Previous test release 0.1.0-test.1
+
+The first test build added a summonable reindeer entity with basic AI, renderer, model, generated texture, code-driven animation, and spawn egg.
 
 ## Testing
 
