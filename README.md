@@ -9,6 +9,27 @@ Planned PyreHaven creature set:
 - Moo-cows
 - Zom-bees
 
+
+## Test release 0.1.0-test.7
+
+This seventh test build adds the outbreak loop:
+
+- Bucket of Randeer Cheese converts vanilla bees into hostile Zom-bees and returns an empty bucket
+- Zom-bees fly, attack players and villagers, and apply Moopoison without dying after stinging
+- Moopoison is a harmful damage-over-time effect that can kill
+- Moopoisoned player/villager deaths spawn Moo-cows on land or Moo-cods in water
+- Moo-cows and breaching Moo-cods sneeze out capped 1-3 Zom-bee swarms
+
+Useful commands:
+
+```mcfunction
+/give @p moo-cow:randeer_cheese_bucket
+/give @p moo-cow:zom_bee_spawn_egg
+/give @p moo-cow:moo_cow_spawn_egg
+/give @p moo-cow:moo_cod_spawn_egg
+/effect give @p moo-cow:moopoison 7 0
+```
+
 ## Test release 0.1.0-test.3
 
 This third test build stabilizes the reindeer model and animation after the second build's in-game model pieces appeared separated and the walk cycle looked twitchy:

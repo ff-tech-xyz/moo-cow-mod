@@ -2,5 +2,12 @@
   "entity.moo-cow.reindeer": "Reindeer",
   "item.moo-cow.randeer_cheese_bucket": "Bucket of Randeer Cheese",
   "item.moo-cow.randeer_milk_bucket": "Randeer Milk Bucket",
-  "item.moo-cow.reindeer_spawn_egg": "Reindeer Spawn Egg"
+  "item.moo-cow.reindeer_spawn_egg": "Reindeer Spawn Egg",
+  "entity.moo-cow.zom_bee": "Zom-bee",
+  "entity.moo-cow.moo_cow": "Moo-cow",
+  "entity.moo-cow.moo_cod": "Moo-cod",
+  "effect.moo-cow.moopoison": "Moopoison",
+  "item.moo-cow.zom_bee_spawn_egg": "Zom-bee Spawn Egg",
+  "item.moo-cow.moo_cow_spawn_egg": "Moo-cow Spawn Egg",
+  "item.moo-cow.moo_cod_spawn_egg": "Moo-cod Spawn Egg"
 }

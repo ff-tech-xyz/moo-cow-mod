@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "moo-cow:item/moo_cod_spawn_egg"
+  }
+}
