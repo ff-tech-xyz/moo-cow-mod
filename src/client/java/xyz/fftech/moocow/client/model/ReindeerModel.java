@@ -9,11 +9,11 @@ import net.minecraft.client.model.geom.builders.CubeListBuilder;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.model.geom.builders.MeshDefinition;
 import net.minecraft.client.model.geom.builders.PartDefinition;
-import net.minecraft.client.renderer.entity.state.LivingEntityRenderState;
 import net.minecraft.util.Mth;
 import xyz.fftech.moocow.MooCowMod;
+import xyz.fftech.moocow.client.render.ReindeerRenderState;
 
-public class ReindeerModel extends EntityModel<LivingEntityRenderState> {
+public class ReindeerModel extends EntityModel<ReindeerRenderState> {
     public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(MooCowMod.id("reindeer"), "main");
 
     private static final float BODY_X_ROT = 1.5707964F;
@@ -32,6 +32,7 @@ public class ReindeerModel extends EntityModel<LivingEntityRenderState> {
     private final ModelPart leftFrontLeg;
     private final ModelPart leftAntler;
     private final ModelPart rightAntler;
+    private final ModelPart redNose;
     private final ModelPart leftEar;
     private final ModelPart rightEar;
     private final ModelPart tail;
@@ -46,6 +47,7 @@ public class ReindeerModel extends EntityModel<LivingEntityRenderState> {
         this.leftFrontLeg = root.getChild("left_front_leg");
         this.leftAntler = this.head.getChild("left_antler");
         this.rightAntler = this.head.getChild("right_antler");
+        this.redNose = this.head.getChild("red_nose");
         this.leftEar = this.head.getChild("left_ear");
         this.rightEar = this.head.getChild("right_ear");
         this.tail = root.getChild("tail");
@@ -158,7 +160,7 @@ public class ReindeerModel extends EntityModel<LivingEntityRenderState> {
     }
 
     @Override
-    public void setupAnim(LivingEntityRenderState state) {
+    public void setupAnim(ReindeerRenderState state) {
         super.setupAnim(state);
 
         float age = state.ageInTicks;
@@ -190,6 +192,8 @@ public class ReindeerModel extends EntityModel<LivingEntityRenderState> {
         this.leftAntler.zRot = idleBreath * 0.7F;
         this.rightAntler.xRot = -idleBreath;
         this.rightAntler.zRot = -idleBreath * 0.7F;
+
+        this.redNose.visible = state.hasRedNose;
 
         this.leftEar.xRot = LEFT_EAR_X_ROT + earFlick * 0.35F;
         this.leftEar.zRot = LEFT_EAR_Z_ROT + earFlick;
