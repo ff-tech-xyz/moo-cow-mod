@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "moo-cow:item/randeer_milk_bucket"
+    "layer0": "moo-cow:item/randeer_cheese_bucket"
   }
 }

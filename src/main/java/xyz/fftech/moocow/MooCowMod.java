@@ -15,6 +15,7 @@ import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.entity.animal.Animal;
+import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -24,9 +25,14 @@ import net.minecraft.world.item.component.Consumables;
 import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.levelgen.Heightmap;
 import xyz.fftech.moocow.entity.ReindeerEntity;
+import xyz.fftech.moocow.item.RandeerMilkBucketItem;
 
 public class MooCowMod implements ModInitializer {
     public static final String MOD_ID = "moo-cow";
+    private static final FoodProperties RANDEER_CHEESE_FOOD = new FoodProperties.Builder()
+        .nutrition(4)
+        .saturationModifier(0.75F)
+        .build();
 
     public static final EntityType<ReindeerEntity> REINDEER = registerReindeer();
     public static final Item REINDEER_SPAWN_EGG = registerItem(
@@ -35,11 +41,22 @@ public class MooCowMod implements ModInitializer {
     );
     public static final Item RANDEER_MILK_BUCKET = registerItem(
         "randeer_milk_bucket",
-        key -> new Item(
+        key -> new RandeerMilkBucketItem(
             new Item.Properties()
                 .setId(key)
                 .craftRemainder(Items.BUCKET)
                 .component(DataComponents.CONSUMABLE, Consumables.MILK_BUCKET)
+                .usingConvertsTo(Items.BUCKET)
+                .stacksTo(1)
+        )
+    );
+    public static final Item RANDEER_CHEESE_BUCKET = registerItem(
+        "randeer_cheese_bucket",
+        key -> new Item(
+            new Item.Properties()
+                .setId(key)
+                .food(RANDEER_CHEESE_FOOD)
+                .craftRemainder(Items.BUCKET)
                 .usingConvertsTo(Items.BUCKET)
                 .stacksTo(1)
         )
@@ -68,7 +85,10 @@ public class MooCowMod implements ModInitializer {
             4
         );
 
-        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.FOOD_AND_DRINKS).register(output -> output.accept(RANDEER_MILK_BUCKET));
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.FOOD_AND_DRINKS).register(output -> {
+            output.accept(RANDEER_MILK_BUCKET);
+            output.accept(RANDEER_CHEESE_BUCKET);
+        });
         CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.SPAWN_EGGS).register(output -> output.accept(REINDEER_SPAWN_EGG));
     }
 

@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smoking",
+  "category": "food",
+  "cookingtime": 200,
+  "experience": 0.35,
+  "ingredient": "moo-cow:randeer_milk_bucket",
+  "result": {
+    "id": "moo-cow:randeer_cheese_bucket"
+  }
+}
