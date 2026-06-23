@@ -1,0 +1,32 @@
+{
+	"schemaVersion": 1,
+	"id": "moo-cow",
+	"version": "${version}",
+	"name": "Moo-Cow Mod",
+	"description": "A PyreHaven client/server creature mod for reindeer, reindeer cheese, moo-cows, and zom-bees.",
+	"authors": [
+		"PyreHaven",
+		"P.H.R.E.D."
+	],
+	"contact": {
+		"homepage": "https://pyrehaven.xyz",
+		"sources": "https://github.com/ff-tech-xyz/moo-cow-mod",
+		"issues": "https://github.com/ff-tech-xyz/moo-cow-mod/issues"
+	},
+	"license": "MIT",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"xyz.fftech.moocow.MooCowMod"
+		],
+		"client": [
+			"xyz.fftech.moocow.client.MooCowClient"
+		]
+	},
+	"depends": {
+		"fabricloader": ">=0.19.3",
+		"fabric-api": ">=0.153.0",
+		"minecraft": "~26.2",
+		"java": ">=21"
+	}
+}
