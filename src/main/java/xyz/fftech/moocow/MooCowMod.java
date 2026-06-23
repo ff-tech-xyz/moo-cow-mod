@@ -36,8 +36,8 @@ public class MooCowMod implements ModInitializer {
         ResourceKey<EntityType<?>> key = ResourceKey.create(Registries.ENTITY_TYPE, id);
         EntityType<ReindeerEntity> type = EntityType.Builder
             .of(ReindeerEntity::new, MobCategory.CREATURE)
-            .sized(1.1F, 1.45F)
-            .eyeHeight(1.25F)
+            .sized(1.1F, 1.75F)
+            .eyeHeight(1.35F)
             .clientTrackingRange(10)
             .build(key);
         return Registry.register(BuiltInRegistries.ENTITY_TYPE, key, type);
