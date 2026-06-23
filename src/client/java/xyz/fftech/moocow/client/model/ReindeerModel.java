@@ -1,6 +1,6 @@
 package xyz.fftech.moocow.client.model;
 
-import net.minecraft.client.model.QuadrupedModel;
+import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
@@ -13,15 +13,23 @@ import net.minecraft.client.renderer.entity.state.LivingEntityRenderState;
 import net.minecraft.util.Mth;
 import xyz.fftech.moocow.MooCowMod;
 
-public class ReindeerModel extends QuadrupedModel<LivingEntityRenderState> {
+public class ReindeerModel extends EntityModel<LivingEntityRenderState> {
     public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(MooCowMod.id("reindeer"), "main");
 
     private static final float BODY_X_ROT = 1.5707964F;
+    private static final float BODY_Y = 14.0F;
+    private static final float HEAD_Y = 8.5F;
     private static final float TAIL_X_ROT = -0.70F;
     private static final float LEFT_EAR_X_ROT = -0.15F;
     private static final float LEFT_EAR_Z_ROT = 0.45F;
     private static final float RIGHT_EAR_Z_ROT = -0.45F;
 
+    private final ModelPart head;
+    private final ModelPart body;
+    private final ModelPart rightHindLeg;
+    private final ModelPart leftHindLeg;
+    private final ModelPart rightFrontLeg;
+    private final ModelPart leftFrontLeg;
     private final ModelPart leftAntler;
     private final ModelPart rightAntler;
     private final ModelPart leftEar;
@@ -30,6 +38,12 @@ public class ReindeerModel extends QuadrupedModel<LivingEntityRenderState> {
 
     public ReindeerModel(ModelPart root) {
         super(root);
+        this.head = root.getChild("head");
+        this.body = root.getChild("body");
+        this.rightHindLeg = root.getChild("right_hind_leg");
+        this.leftHindLeg = root.getChild("left_hind_leg");
+        this.rightFrontLeg = root.getChild("right_front_leg");
+        this.leftFrontLeg = root.getChild("left_front_leg");
         this.leftAntler = this.head.getChild("left_antler");
         this.rightAntler = this.head.getChild("right_antler");
         this.leftEar = this.head.getChild("left_ear");
@@ -146,40 +160,43 @@ public class ReindeerModel extends QuadrupedModel<LivingEntityRenderState> {
     @Override
     public void setupAnim(LivingEntityRenderState state) {
         super.setupAnim(state);
+
         float age = state.ageInTicks;
         float walkAmount = Math.min(state.walkAnimationSpeed, 1.0F);
         float walkCycle = state.walkAnimationPos * 0.6662F;
-        float idleBob = Mth.sin(age * 0.08F) * 0.035F;
-        float walkBob = Mth.sin(walkCycle) * 0.025F * walkAmount;
-        float tailWag = Mth.sin(age * 0.18F) * 0.16F + Mth.sin(walkCycle * 2.0F) * 0.10F * walkAmount;
-        float bodyBob = Math.abs(Mth.sin(walkCycle)) * 0.35F * walkAmount;
-        float earFlick = Mth.sin(age * 0.11F) * 0.04F;
+        float idleBreath = Mth.sin(age * 0.08F) * 0.015F;
+        float tailWag = Mth.sin(age * 0.18F) * 0.12F + Mth.sin(walkCycle * 1.8F) * 0.08F * walkAmount;
+        float earFlick = Mth.sin(age * 0.11F) * 0.035F;
 
         if (Mth.sin(age * 0.37F) > 0.92F) {
-            earFlick += 0.16F;
+            earFlick += 0.13F;
         }
 
-        this.leftAntler.xRot = -walkBob;
-        this.leftAntler.zRot = idleBob + walkBob;
-        this.rightAntler.xRot = -walkBob;
-        this.rightAntler.zRot = -idleBob - walkBob;
+        this.head.xRot = state.xRot * 0.017453292F + idleBreath;
+        this.head.yRot = state.yRot * 0.017453292F;
+        this.head.y = HEAD_Y;
+
+        this.body.xRot = BODY_X_ROT;
+        this.body.y = BODY_Y;
+
+        float legSwing = Mth.cos(walkCycle) * 0.75F * walkAmount;
+        float oppositeLegSwing = Mth.cos(walkCycle + 3.1415927F) * 0.75F * walkAmount;
+        this.rightHindLeg.xRot = legSwing;
+        this.leftHindLeg.xRot = oppositeLegSwing;
+        this.rightFrontLeg.xRot = oppositeLegSwing;
+        this.leftFrontLeg.xRot = legSwing;
+
+        this.leftAntler.xRot = -idleBreath;
+        this.leftAntler.zRot = idleBreath * 0.7F;
+        this.rightAntler.xRot = -idleBreath;
+        this.rightAntler.zRot = -idleBreath * 0.7F;
 
         this.leftEar.xRot = LEFT_EAR_X_ROT + earFlick * 0.35F;
         this.leftEar.zRot = LEFT_EAR_Z_ROT + earFlick;
         this.rightEar.xRot = LEFT_EAR_X_ROT + earFlick * 0.25F;
         this.rightEar.zRot = RIGHT_EAR_Z_ROT - earFlick * 0.85F;
 
-        this.tail.xRot = TAIL_X_ROT + 0.08F * walkAmount;
+        this.tail.xRot = TAIL_X_ROT + 0.05F * walkAmount;
         this.tail.yRot = tailWag;
-
-        this.body.xRot = BODY_X_ROT;
-        this.body.y = 14.0F + bodyBob;
-        this.head.y = 8.5F + bodyBob * 0.45F + Mth.sin(age * 0.07F) * 0.05F;
-
-        float prance = Mth.sin(walkCycle + 1.5707964F) * 0.18F * walkAmount;
-        this.rightFrontLeg.xRot += prance;
-        this.leftFrontLeg.xRot -= prance;
-        this.rightHindLeg.xRot -= prance * 0.45F;
-        this.leftHindLeg.xRot += prance * 0.45F;
     }
 }

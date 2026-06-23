@@ -9,6 +9,15 @@ Planned PyreHaven creature set:
 - Moo-cows
 - Zom-bees
 
+## Test release 0.1.0-test.3
+
+This third test build stabilizes the reindeer model and animation after the second build's in-game model pieces appeared separated and the walk cycle looked twitchy:
+
+- switches the renderer model from vanilla `QuadrupedModel` to a custom `EntityModel` so only the reindeer's own parts and pivots drive animation
+- removes the exaggerated body/head bob that could make the body, head, and legs look disconnected
+- replaces the additive prance with a calmer four-leg walk cycle
+- keeps subtle idle head breathing, ear flicks, antler sway, and tail wag without moving the main body pieces apart
+
 ## Test release 0.1.0-test.2
 
 This second test build refreshes the summonable reindeer with:
