@@ -56,6 +56,15 @@ processResources {
 	}
 }
 
+// Do not let the sources jar masquerade as an installable Fabric mod.
+// It has no compiled entrypoint classes, so if it is accidentally dropped into
+// a mods folder, Fabric would read fabric.mod.json and crash with CNFE.
+tasks.withType(Jar).configureEach {
+	if (name == "sourcesJar") {
+		exclude("fabric.mod.json")
+	}
+}
+
 tasks.withType(JavaCompile).configureEach {
 	it.options.release = 21
 }
