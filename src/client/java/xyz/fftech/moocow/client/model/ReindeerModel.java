@@ -75,59 +75,59 @@ public class ReindeerModel extends EntityModel<ReindeerRenderState> {
         root.addOrReplaceChild(
             "body",
             CubeListBuilder.create()
-                .texOffs(0, 24).addBox(-5.8F, -6.0F, -10.0F, 11.6F, 10.0F, 18.5F, CubeDeformation.NONE)
-                .texOffs(0, 24).addBox(-5.4F, -4.7F, 4.7F, 10.8F, 8.3F, 5.0F, CubeDeformation.NONE)
-                .texOffs(48, 58).addBox(-5.7F, -7.2F, -11.1F, 11.4F, 5.2F, 7.4F, CubeDeformation.NONE)
-                .texOffs(0, 24).addBox(-4.8F, 2.3F, -7.9F, 9.6F, 2.8F, 14.0F, CubeDeformation.NONE)
-                .texOffs(88, 104).addBox(-4.5F, -7.8F, -7.0F, 9.0F, 1.4F, 11.5F, CubeDeformation.NONE)
-                .texOffs(48, 98).addBox(-4.6F, -5.7F, -11.8F, 9.2F, 6.8F, 2.1F, CubeDeformation.NONE)
-                .texOffs(48, 98).addBox(4.8F, -3.0F, -7.7F, 1.5F, 5.0F, 11.0F, CubeDeformation.NONE)
-                .texOffs(48, 98).addBox(-6.3F, -3.0F, -7.7F, 1.5F, 5.0F, 11.0F, CubeDeformation.NONE),
+                .texOffs(0, 0).addBox(-6.0F, -6.0F, -10.0F, 12.0F, 10.0F, 18.0F, CubeDeformation.NONE)
+                .texOffs(62, 0).addBox(-5.0F, -4.0F, 5.0F, 10.0F, 8.0F, 5.0F, CubeDeformation.NONE)
+                .texOffs(0, 30).addBox(-6.0F, -7.0F, -11.0F, 12.0F, 5.0F, 7.0F, CubeDeformation.NONE)
+                .texOffs(40, 30).addBox(-5.0F, 2.0F, -8.0F, 10.0F, 3.0F, 14.0F, CubeDeformation.NONE)
+                .texOffs(0, 49).addBox(-4.5F, -8.0F, -7.0F, 9.0F, 1.0F, 12.0F, CubeDeformation.NONE)
+                .texOffs(44, 49).addBox(-5.0F, -5.5F, -12.0F, 10.0F, 6.0F, 2.0F, CubeDeformation.NONE)
+                .texOffs(70, 49).addBox(4.8F, -3.0F, -8.0F, 2.0F, 5.0F, 11.0F, CubeDeformation.NONE)
+                .texOffs(70, 49).addBox(-6.8F, -3.0F, -8.0F, 2.0F, 5.0F, 11.0F, CubeDeformation.NONE),
             PartPose.offset(0.0F, BODY_Y, BODY_Z)
         );
 
         root.addOrReplaceChild(
             "neck",
             CubeListBuilder.create()
-                .texOffs(48, 98).addBox(-3.0F, -5.0F, -1.4F, 6.0F, 7.3F, 3.7F, CubeDeformation.NONE)
-                .texOffs(48, 98).addBox(-2.5F, -5.8F, 1.5F, 5.0F, 4.6F, 1.5F, CubeDeformation.NONE)
-                .texOffs(48, 98).addBox(-4.0F, -0.4F, -1.3F, 8.0F, 5.1F, 2.2F, CubeDeformation.NONE),
+                .texOffs(98, 49).addBox(-3.0F, -5.0F, -1.5F, 6.0F, 8.0F, 4.0F, CubeDeformation.NONE)
+                .texOffs(0, 67).addBox(-2.5F, -6.0F, 1.5F, 5.0F, 5.0F, 2.0F, CubeDeformation.NONE)
+                .texOffs(16, 67).addBox(-4.0F, 0.0F, -1.5F, 8.0F, 5.0F, 2.0F, CubeDeformation.NONE),
             PartPose.offsetAndRotation(0.0F, NECK_Y, NECK_Z, NECK_X_ROT, 0.0F, 0.0F)
         );
 
         PartDefinition head = root.addOrReplaceChild(
             "head",
             CubeListBuilder.create()
-                .texOffs(0, 0).addBox(-4.2F, -4.2F, -3.1F, 8.4F, 7.1F, 6.4F, CubeDeformation.NONE)
-                .texOffs(32, 0).addBox(-3.2F, -1.5F, -6.9F, 6.4F, 3.7F, 4.8F, CubeDeformation.NONE)
-                .texOffs(32, 0).addBox(-2.1F, -3.1F, -5.5F, 4.2F, 2.3F, 3.2F, CubeDeformation.NONE)
-                .texOffs(48, 98).addBox(-3.5F, -0.3F, -2.8F, 1.8F, 3.0F, 2.3F, CubeDeformation.NONE)
-                .texOffs(48, 98).addBox(1.7F, -0.3F, -2.8F, 1.8F, 3.0F, 2.3F, CubeDeformation.NONE)
-                .texOffs(48, 98).addBox(-2.0F, -5.0F, -2.2F, 4.0F, 2.1F, 2.9F, CubeDeformation.NONE)
-                .texOffs(116, 104).addBox(-3.7F, -1.8F, -3.6F, 1.0F, 1.1F, 0.35F, CubeDeformation.NONE)
-                .texOffs(116, 104).addBox(2.7F, -1.8F, -3.6F, 1.0F, 1.1F, 0.35F, CubeDeformation.NONE),
+                .texOffs(38, 67).addBox(-4.0F, -4.0F, -3.0F, 8.0F, 7.0F, 6.0F, CubeDeformation.NONE)
+                .texOffs(68, 67).addBox(-3.0F, -1.5F, -7.0F, 6.0F, 4.0F, 5.0F, CubeDeformation.NONE)
+                .texOffs(92, 67).addBox(-2.0F, -3.0F, -5.5F, 4.0F, 2.0F, 3.0F, CubeDeformation.NONE)
+                .texOffs(108, 67).addBox(-3.5F, 0.0F, -3.0F, 2.0F, 3.0F, 2.0F, CubeDeformation.NONE)
+                .texOffs(108, 67).addBox(1.5F, 0.0F, -3.0F, 2.0F, 3.0F, 2.0F, CubeDeformation.NONE)
+                .texOffs(0, 82).addBox(-2.0F, -5.0F, -2.5F, 4.0F, 2.0F, 3.0F, CubeDeformation.NONE)
+                .texOffs(16, 82).addBox(-3.5F, -2.0F, -3.55F, 1.0F, 1.0F, 1.0F, CubeDeformation.NONE)
+                .texOffs(16, 82).addBox(2.5F, -2.0F, -3.55F, 1.0F, 1.0F, 1.0F, CubeDeformation.NONE),
             PartPose.offset(0.0F, HEAD_Y, HEAD_Z)
         );
 
         head.addOrReplaceChild(
             "red_nose",
             CubeListBuilder.create()
-                .texOffs(100, 24).addBox(-1.5F, -0.8F, -7.8F, 3.0F, 2.2F, 1.1F, CubeDeformation.NONE),
+                .texOffs(22, 82).addBox(-1.5F, -0.7F, -8.0F, 3.0F, 2.0F, 1.0F, CubeDeformation.NONE),
             PartPose.ZERO
         );
 
         head.addOrReplaceChild(
             "left_ear",
             CubeListBuilder.create()
-                .texOffs(60, 24).addBox(-0.3F, -2.6F, -0.4F, 1.8F, 5.2F, 1.2F, CubeDeformation.NONE)
-                .texOffs(60, 24).addBox(0.1F, -1.6F, -0.5F, 1.3F, 3.6F, 1.4F, CubeDeformation.NONE),
+                .texOffs(32, 82).addBox(-0.3F, -2.5F, -0.5F, 2.0F, 5.0F, 1.0F, CubeDeformation.NONE)
+                .texOffs(40, 82).addBox(0.1F, -1.5F, -0.6F, 1.0F, 4.0F, 1.0F, CubeDeformation.NONE),
             PartPose.offsetAndRotation(3.6F, -2.7F, 0.0F, LEFT_EAR_X_ROT, 0.0F, LEFT_EAR_Z_ROT)
         );
         head.addOrReplaceChild(
             "right_ear",
             CubeListBuilder.create().mirror(true)
-                .texOffs(60, 24).addBox(-1.5F, -2.6F, -0.4F, 1.8F, 5.2F, 1.2F, CubeDeformation.NONE)
-                .texOffs(60, 24).addBox(-1.4F, -1.6F, -0.5F, 1.3F, 3.6F, 1.4F, CubeDeformation.NONE),
+                .texOffs(32, 82).addBox(-1.7F, -2.5F, -0.5F, 2.0F, 5.0F, 1.0F, CubeDeformation.NONE)
+                .texOffs(40, 82).addBox(-1.1F, -1.5F, -0.6F, 1.0F, 4.0F, 1.0F, CubeDeformation.NONE),
             PartPose.offsetAndRotation(-3.6F, -2.7F, 0.0F, LEFT_EAR_X_ROT, 0.0F, RIGHT_EAR_Z_ROT)
         );
 
@@ -142,8 +142,8 @@ public class ReindeerModel extends EntityModel<ReindeerRenderState> {
         root.addOrReplaceChild(
             "tail",
             CubeListBuilder.create()
-                .texOffs(48, 98).addBox(-1.1F, -0.6F, -0.6F, 2.2F, 3.5F, 1.9F, CubeDeformation.NONE)
-                .texOffs(48, 98).addBox(-2.2F, 2.2F, -0.8F, 4.4F, 3.1F, 2.5F, CubeDeformation.NONE),
+                .texOffs(14, 93).addBox(-1.0F, -0.5F, -0.5F, 2.0F, 4.0F, 2.0F, CubeDeformation.NONE)
+                .texOffs(24, 93).addBox(-2.0F, 2.5F, -0.8F, 4.0F, 3.0F, 2.0F, CubeDeformation.NONE),
             PartPose.offsetAndRotation(0.0F, 11.0F, 10.8F, TAIL_X_ROT, 0.0F, 0.0F)
         );
 
@@ -152,14 +152,14 @@ public class ReindeerModel extends EntityModel<ReindeerRenderState> {
 
     private static void addAntler(PartDefinition head, String name, boolean mirrored, float xOffset) {
         CubeListBuilder cubes = CubeListBuilder.create().mirror(mirrored)
-            .texOffs(60, 0).addBox(mirrored ? -0.2F : -0.8F, -6.8F, -0.8F, 1.0F, 7.0F, 1.0F, CubeDeformation.NONE)
-            .texOffs(60, 0).addBox(mirrored ? -5.0F : -0.2F, -6.8F, -0.8F, 5.2F, 1.1F, 1.0F, CubeDeformation.NONE)
-            .texOffs(60, 0).addBox(mirrored ? -5.2F : 4.1F, -10.0F, -0.8F, 1.1F, 4.2F, 1.0F, CubeDeformation.NONE)
-            .texOffs(60, 0).addBox(mirrored ? -3.5F : 2.4F, -9.1F, -1.8F, 1.1F, 3.7F, 1.1F, CubeDeformation.NONE)
-            .texOffs(60, 0).addBox(mirrored ? -1.8F : 0.8F, -8.2F, -1.9F, 1.0F, 3.1F, 1.1F, CubeDeformation.NONE)
-            .texOffs(60, 0).addBox(mirrored ? -0.2F : -0.8F, -8.5F, 0.6F, 1.0F, 3.3F, 1.0F, CubeDeformation.NONE)
-            .texOffs(60, 0).addBox(mirrored ? -4.0F : 3.0F, -6.8F, 0.8F, 1.0F, 2.9F, 1.0F, CubeDeformation.NONE)
-            .texOffs(60, 0).addBox(mirrored ? -5.9F : 4.8F, -8.4F, -0.9F, 1.1F, 2.8F, 1.1F, CubeDeformation.NONE);
+            .texOffs(46, 82).addBox(mirrored ? -0.2F : -0.8F, -6.8F, -0.8F, 1.0F, 7.0F, 1.0F, CubeDeformation.NONE)
+            .texOffs(52, 82).addBox(mirrored ? -5.0F : -0.2F, -6.8F, -0.8F, 5.0F, 1.0F, 1.0F, CubeDeformation.NONE)
+            .texOffs(66, 82).addBox(mirrored ? -5.0F : 4.0F, -10.0F, -0.8F, 1.0F, 4.0F, 1.0F, CubeDeformation.NONE)
+            .texOffs(72, 82).addBox(mirrored ? -3.4F : 2.4F, -9.1F, -1.8F, 1.0F, 4.0F, 1.0F, CubeDeformation.NONE)
+            .texOffs(78, 82).addBox(mirrored ? -1.8F : 0.8F, -8.2F, -1.9F, 1.0F, 3.0F, 1.0F, CubeDeformation.NONE)
+            .texOffs(84, 82).addBox(mirrored ? -0.2F : -0.8F, -8.5F, 0.6F, 1.0F, 3.0F, 1.0F, CubeDeformation.NONE)
+            .texOffs(90, 82).addBox(mirrored ? -4.0F : 3.0F, -6.8F, 0.8F, 1.0F, 3.0F, 1.0F, CubeDeformation.NONE)
+            .texOffs(90, 82).addBox(mirrored ? -5.8F : 4.8F, -8.4F, -0.9F, 1.0F, 3.0F, 1.0F, CubeDeformation.NONE);
 
         head.addOrReplaceChild(
             name,
@@ -172,22 +172,22 @@ public class ReindeerModel extends EntityModel<ReindeerRenderState> {
         PartDefinition leg = root.addOrReplaceChild(
             name,
             CubeListBuilder.create().mirror(mirrored)
-                .texOffs(48, 58).addBox(-1.45F, -0.4F, -1.4F, 2.9F, 5.7F, 2.9F, CubeDeformation.NONE)
-                .texOffs(48, 98).addBox(-1.25F, -0.9F, hind ? -1.9F : -2.0F, 2.5F, 3.1F, 0.9F, CubeDeformation.NONE),
+                .texOffs(96, 82).addBox(-1.5F, -0.5F, -1.5F, 3.0F, 6.0F, 3.0F, CubeDeformation.NONE)
+                .texOffs(110, 82).addBox(-1.5F, -1.0F, hind ? -1.9F : -2.0F, 3.0F, 3.0F, 1.0F, CubeDeformation.NONE),
             PartPose.offset(x, 14.0F, z)
         );
 
         PartDefinition lower = leg.addOrReplaceChild(
             "lower",
             CubeListBuilder.create().mirror(mirrored)
-                .texOffs(86, 58).addBox(-1.05F, -0.2F, -1.05F, 2.1F, 4.1F, 2.1F, CubeDeformation.NONE),
+                .texOffs(120, 82).addBox(-1.0F, -0.2F, -1.0F, 2.0F, 5.0F, 2.0F, CubeDeformation.NONE),
             PartPose.offset(0.0F, 5.0F, 0.0F)
         );
 
         lower.addOrReplaceChild(
             "hoof",
             CubeListBuilder.create().mirror(mirrored)
-                .texOffs(0, 88).addBox(-1.5F, 3.2F, -1.55F, 3.0F, 1.8F, 3.1F, CubeDeformation.NONE),
+                .texOffs(0, 93).addBox(-1.5F, 3.2F, -1.5F, 3.0F, 2.0F, 3.0F, CubeDeformation.NONE),
             PartPose.ZERO
         );
     }
