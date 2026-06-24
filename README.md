@@ -9,6 +9,14 @@ Planned PyreHaven creature set:
 - Moo-cows
 - Zom-bees
 
+## Test release 0.1.0-test.10
+
+This tenth test build gives the Reindeer a full Blockbench/API art pass after the prior model, texture, and movement read too rough in-game:
+
+- adds a new editable Blockbench source model at `blockbench/reindeer_v3.bbmodel`
+- rebuilds the runtime Java model with a fuller body, separate neck, clearer head/muzzle, visible eyes, stronger red nose, larger branching antlers, chest/side fluff, jointed legs, darker hooves, and a readable tail
+- replaces the 128×128 runtime texture with cleaner fur dithering, cream muzzle/chest markings, brighter antlers, black eye detail, darker hoof islands, and stronger red-nose highlight
+- updates the code-driven animation so the walk cycle uses smoother four-leg motion with knee follow-through, subtle body/neck/head bob, ear flicks, antler sway, and tail wag without pulling pieces apart
 
 ## Test release 0.1.0-test.7
 
